@@ -1,5 +1,5 @@
 {
-  "name": "npm-scripts-sample",
+  "name": "npm-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,8 +11,8 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "autoprefixer": "^8.6.4",
+    "autoprefixer": "^8.6.5",
     "fs-extra": "^6.0.1",
-    "node-sass": "^4.9.0"
+    "node-sass": "^4.9.2"
   }
 }
