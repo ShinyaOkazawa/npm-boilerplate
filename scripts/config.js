@@ -13,6 +13,7 @@ module.exports = {
     }
   },
   webpack: {
+    mode: 'production',
     entry: path.resolve(__dirname, `../${SRC}/assets/js/app.js`),
     output: {
       filename: 'app.js',
