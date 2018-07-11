@@ -11,7 +11,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.0.0-beta.52",
+    "@babel/preset-env": "^7.0.0-beta.52",
     "autoprefixer": "^8.6.5",
+    "babel-loader": "^8.0.0-beta.4",
     "fs-extra": "^6.0.1",
     "node-sass": "^4.9.2",
     "webpack": "^4.15.1"

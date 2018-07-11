@@ -8,8 +8,8 @@ const script = require('./script');
 
 
 function main(){
-  // clean();
-  // style();
+  clean();
+  style();
   script();
 }
 
