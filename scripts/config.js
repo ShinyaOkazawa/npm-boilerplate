@@ -33,5 +33,9 @@ module.exports = {
         }
       ]
     }
+  },
+  imagemin: {
+    src: path.resolve(__dirname, `../${SRC}/assets/images/*.{jpg,png,gif,svg}`),
+    dest: path.resolve(__dirname, `../${DEST}/assets/images`)
   }
 };
