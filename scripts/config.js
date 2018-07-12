@@ -1,6 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  copy: {
+    src: `${SRC}/assets/images/**/*`,
+    dest: `${DEST}/assets/images`
+  },
   sass: {
     file: `${SRC}/assets/sass/style.scss`,
     outputStyle: 'compressed'
@@ -35,7 +39,7 @@ module.exports = {
     }
   },
   imagemin: {
-    src: path.resolve(__dirname, `../${SRC}/assets/images/*.{jpg,png,gif,svg}`),
-    dest: path.resolve(__dirname, `../${DEST}/assets/images`)
+    src: `${DEST}/assets/images/*.{jpg,png,gif,svg}`,
+    dest: `${DEST}/assets/images`
   }
 };
