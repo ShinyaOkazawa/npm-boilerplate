@@ -16,6 +16,11 @@ module.exports = {
       inline: false
     }
   },
+  watch: {
+    sass: path.resolve(__dirname, `../${SRC}/assets/sass`),
+    js: path.resolve(__dirname, `../${SRC}/assets/js`),
+    images: path.resolve(__dirname, `../${SRC}/assets/images`)
+  },
   webpack: {
     mode: 'production',
     entry: path.resolve(__dirname, `../${SRC}/assets/js/app.js`),

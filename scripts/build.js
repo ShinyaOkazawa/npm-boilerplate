@@ -5,13 +5,15 @@ const style = require('./style');
 const script = require('./script');
 const imagemin = require('./imagemin');
 const copy = require('./copy');
+const watch = require('./watch');
 
 async function main(){
-  await clean();
-  await copy();
+  // await clean();
+  // await copy();
   // await imagemin();
-  style();
-  script();
+  // style();
+  // script();
+  watch();
 }
 
 main();
