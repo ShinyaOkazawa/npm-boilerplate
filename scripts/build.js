@@ -1,19 +1,17 @@
 require('./global');
 
-const clean = require('./clean');
-const style = require('./style');
-const script = require('./script');
-const imagemin = require('./imagemin');
-const copy = require('./copy');
-const watch = require('./watch');
+const clean = require('./task/clean');
+const copy = require('./task/copy');
+const imagemin = require('./task/imagemin');
+const style = require('./task/style');
+const script = require('./task/script');
 
 async function main(){
-  // await clean();
-  // await copy();
+  await clean();
+  await copy();
   // await imagemin();
-  // style();
-  // script();
-  watch();
+  style();
+  script();
 }
 
 main();

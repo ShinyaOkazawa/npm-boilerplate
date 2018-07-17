@@ -1,4 +1,4 @@
-const config = require('./config');
+const config = require('../config');
 const imagemin = require('imagemin');
 const imageminMozjpeg = require('imagemin-mozjpeg');
 const imageminPngquant = require('imagemin-pngquant');

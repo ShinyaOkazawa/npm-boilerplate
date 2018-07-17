@@ -1,6 +1,6 @@
-const config = require('./config');
+const config = require('../config');
 const fs = require('fs-extra');
-const util = require('./util');
+const util = require('../util');
 const path = require('path');
 
 module.exports = async function(){

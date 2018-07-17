@@ -1,17 +1,22 @@
 const path = require('path');
 
 module.exports = {
+  clean: path.resolve(__dirname, `../${DEST}`),
   copy: {
-    src: `${SRC}/assets/images/**/*`,
-    dest: `${DEST}/assets/images`
+    src: path.resolve(__dirname, `../${SRC}/assets/images/**/*`),
+    dest: path.resolve(__dirname, `../${DEST}/assets/images`)
+  },
+  style: {
+    css: path.resolve(__dirname, `../${DEST}/assets/css/style.css`),
+    map: path.resolve(__dirname, `../${DEST}/assets/css/style.css.map`)
   },
   sass: {
-    file: `${SRC}/assets/sass/style.scss`,
+    file: path.resolve(__dirname, `../${SRC}/assets/sass/style.scss`),
     outputStyle: 'compressed'
   },
   postcss: {
-    from: `${DEST}/assets/css/style.css`,
-    to: `${DEST}/assets/css/style.css`,
+    from: path.resolve(__dirname, `../${DEST}/assets/css/style.css`),
+    to: path.resolve(__dirname, `../${DEST}/assets/css/style.css`),
     map: {
       inline: false
     }
@@ -44,7 +49,7 @@ module.exports = {
     }
   },
   imagemin: {
-    src: `${DEST}/assets/images/*.{jpg,png,gif,svg}`,
-    dest: `${DEST}/assets/images`
+    src: path.resolve(__dirname, `../${DEST}/assets/images/*.{jpg,png,gif,svg}`),
+    dest: path.resolve(__dirname, `../${DEST}/assets/images`)
   }
 };
