@@ -4,14 +4,18 @@ const chokidar = require('chokidar');
 const copy = require('./task/copy');
 const style = require('./task/style');
 const script = require('./task/script');
+const bs = require('browser-sync').create();
 
 function main() {
+  bs.init(config.server);
+
   chokidar.watch(config.watch.sass, {
     ignored: /(^|[\/\\])\../,
     ignoreInitial: true
   }).on('all', (event, path) => {
     console.log(event, path);
     style();
+    bs.reload('*.html');
   });
   chokidar.watch(config.watch.js, {
     ignored: /(^|[\/\\])\../,
@@ -19,6 +23,7 @@ function main() {
   }).on('all', (event, path) => {
     console.log(event, path);
     script();
+    bs.reload('*.html');
   });
   chokidar.watch(config.watch.images, {
     ignored: /(^|[\/\\])\../,
@@ -26,7 +31,10 @@ function main() {
   }).on('all', (event, path) => {
     console.log(event, path);
     copy();
+    bs.reload('*.html');
   });
+
+
 };
 
 main();

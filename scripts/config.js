@@ -51,5 +51,14 @@ module.exports = {
   imagemin: {
     src: path.resolve(__dirname, `../${DEST}/assets/images/*.{jpg,png,gif,svg}`),
     dest: path.resolve(__dirname, `../${DEST}/assets/images`)
+  },
+  server: {
+    server: path.resolve(__dirname, `../${DEST}`),
+    ghostMode: {
+      clicks: false,
+      scroll: false,
+      location: false,
+      forms: false
+    }
   }
 };
