@@ -5,6 +5,7 @@ const copy = require('./task/copy');
 const imagemin = require('./task/imagemin');
 const style = require('./task/style');
 const script = require('./task/script');
+const html = require('./task/html');
 
 async function main(){
   await clean();
@@ -12,6 +13,7 @@ async function main(){
   // await imagemin();
   style();
   script();
+  html();
 }
 
 main();

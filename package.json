@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "node ./scripts/build.js",
-    "watch": "node ./scripts/watch.js"
+    "serve": "node ./scripts/watch.js"
   },
   "keywords": [],
   "author": "",

@@ -13,9 +13,6 @@ module.exports = async function() {
     // autoprefix
     const autoPrefixResult = await addAutoPrefix(sassResult.css);
     console.log('autoprefixer was successful.');
-
-    console.log(config.style.css);
-    console.log(config.style.map);
     
     fs.outputFileSync(config.style.css, autoPrefixResult.css);
     if ( autoPrefixResult.map ) {

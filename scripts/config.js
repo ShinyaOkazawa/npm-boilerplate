@@ -2,6 +2,10 @@ const path = require('path');
 
 module.exports = {
   clean: path.resolve(__dirname, `../${DEST}`),
+  html: {
+    src: path.resolve(__dirname, `../${SRC}/**/*.html`),
+    dest: path.resolve(__dirname, `../${DEST}`)
+  },
   copy: {
     src: path.resolve(__dirname, `../${SRC}/assets/images/**/*`),
     dest: path.resolve(__dirname, `../${DEST}/assets/images`)
@@ -22,6 +26,7 @@ module.exports = {
     }
   },
   watch: {
+    html: path.resolve(__dirname, `../${SRC}/**/*.html`),
     sass: path.resolve(__dirname, `../${SRC}/assets/sass`),
     js: path.resolve(__dirname, `../${SRC}/assets/js`),
     images: path.resolve(__dirname, `../${SRC}/assets/images`)
