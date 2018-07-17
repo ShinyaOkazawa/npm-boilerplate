@@ -9,7 +9,7 @@ const copy = require('./copy');
 async function main(){
   await clean();
   await copy();
-  await imagemin();
+  // await imagemin();
   style();
   script();
 }
