@@ -15,32 +15,36 @@ function main() {
     ignoreInitial: true
   }).on('all', (event, path) => {
     console.log(event, path);
-    html();
-    bs.reload('*.html');
+    html().then(()=>{
+      bs.reload('*.html');
+    });
   });
   chokidar.watch(config.watch.sass, {
     ignored: /(^|[\/\\])\../,
     ignoreInitial: true
   }).on('all', (event, path) => {
     console.log(event, path);
-    style();
-    bs.reload('*.html');
+    style().then(()=>{
+      bs.reload('*.html');
+    });
   });
   chokidar.watch(config.watch.js, {
     ignored: /(^|[\/\\])\../,
     ignoreInitial: true
   }).on('all', (event, path) => {
     console.log(event, path);
-    script();
-    bs.reload('*.html');
+    script().then(()=>{
+      bs.reload('*.html');
+    });
   });
   chokidar.watch(config.watch.images, {
     ignored: /(^|[\/\\])\../,
     ignoreInitial: true
   }).on('all', (event, path) => {
     console.log(event, path);
-    copy();
-    bs.reload('*.html');
+    copy().then(()=>{
+      bs.reload('*.html');
+    });
   });
 
 

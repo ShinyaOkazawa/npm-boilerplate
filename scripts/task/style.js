@@ -4,23 +4,27 @@ const sass = require('node-sass');
 const autoprefixer = require('autoprefixer');
 const postcss = require('postcss');
 
-module.exports = async function() {
-  try {
-    // sass compile
-    const sassResult = await compileSass();
-    console.log('sass compile was successful.');
-    
-    // autoprefix
-    const autoPrefixResult = await addAutoPrefix(sassResult.css);
-    console.log('autoprefixer was successful.');
-    
-    fs.outputFileSync(config.style.css, autoPrefixResult.css);
-    if ( autoPrefixResult.map ) {
-      fs.outputFileSync(config.style.map, autoPrefixResult.map);
+module.exports = function() {
+  return new Promise(async (resolve, reject)=>{
+    try {
+      // sass compile
+      const sassResult = await compileSass();
+      console.log('sass compile was successful.');
+      
+      // autoprefix
+      const autoPrefixResult = await addAutoPrefix(sassResult.css);
+      console.log('autoprefixer was successful.');
+      
+      fs.outputFileSync(config.style.css, autoPrefixResult.css);
+      if ( autoPrefixResult.map ) {
+        fs.outputFileSync(config.style.map, autoPrefixResult.map);
+      }
+      resolve();
+    } catch (err) {
+      console.log(err);
+      reject();
     }
-  } catch (err) {
-    console.log(err);
-  }
+  });
 };
 
 function compileSass(){
